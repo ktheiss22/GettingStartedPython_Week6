@@ -8,9 +8,34 @@
     - Floating point numbers (decimals) - `myFloat = 3.21312`
     - If running Python interactively, variable values can be seen just by typing the name of the variable - `myFloat`.
     - If running Python in a script, variable values can be printed by using the `print()` funtion - `print(myFloat)`.
-    - Define myInt and myFloat as above. Now calculate `myInt / myFloat`. What type of number is the result?
+    - Define myInt and myFloat as above. Now calculate `myInt / myFloat`. What type of number is the result? #Floating point number
     - Now try `float(myInt)` and `int(myFloat)`. What are the results? Look back at the values of `myInt` and `myFloat`. Have they changed?
     - Changing numbers from one type to another is one form of "type casting".
+```
+# Notes 2/22/22
+- Jupyter notebook can mix python and markdown. 
+- we can use this to create graphs stuff too
+- helps keep projects organized 
+- we can run juputer locallly with anaconda 
+- dir -> directory. gives a list of the methods associated with that particular variable. 
+    - methods with 2 underscores around the method are written this way because we do not want to execute them manually. but you can. 
+- you have to allocate as much time you need when you use jupyter to access the notebook. it'll kick you off after time's up. 
+
+- python is a dynaimcally typed language, it tries to automatically interpret the value we are providing (integer/floating)
+- integer: whole numbers 
+- floating point number: anything with a decimal
+- in a script, we have to print the variable when using python. interctaively we can just type the variable name
+- anything inside parenthesis is an argument 
+- the word before the parenthesis is the function (verb of programing language) -> function(argument)
+- myInt/myFloat (dividing myInt variable by the myFloat value) answer is floating point number
+- float(myInt) -> take a data type and convert into what we need
+- ("this is interpreted as a character, even if using numeric values") -> with quotation marks
+- (integer value, no quotations. Will return numeric value) -> no quotation marks and cuts off the decimals. 
+- formal term for what we are doing is called: type casting. 
+- we often use strings, which is a series of individual characters. 
+- individual letters, numbers, spaces are individual characters. 
+- notebook in is an input out is an output on the left hand column. the numbers keep track of the order of commands we execute. 
+```
 
 - Strings - `myStr = "This is a string."`
     - Strings can be of any length, but are always defined with quotes.
@@ -24,13 +49,32 @@
       - `myStr = "biology"`
       - `newString = myStr + "_is_super_interesting"`
       - `newString`
-
+```
+Notes: 2/22/22
+- myStr[0] -> extracts the first character of the string at index 0. 
+- python starts counting from 0 not 1. 
+- [] is called indexing, looking up an individual character. only use when a string has been created. 
+- myStr[2:5] -> two numbers separated by a colon, this says 2,3,4,5 and counts the whole range of numbers. when we run this (4 characters) we get 3 characters returned 'is ' the space is a character. we do not get 4 because is exclusive of the last index and inclusive of the first 3 index. we need to go one more than what we want included. 
+- myStr[-1] is counting in reverse -> we can only have 1 zero. -1 is the first character at the end. 0 is the first index counting forward. 
+- we can glue strings together too, we can mix variables and literal and mix them too. 
+- + is an example of an operator, and they do diffrerent things based on the type of variables we have. 
+```
 - Booleans - `True` or `False`
     - These variables can take the values `True` or `False` only.
       - `myBool = True`
     - These are the data types used in things like `if...else` statements and `while` loops.
     - Logical statements, like `myNum > 3` or `myStr == "test"`, return a boolean variable indicating the result of the comparison
     - In Python, the value of a Boolean can be reversed by preceding it with `not`.
+```
+# Notes 2/22/22
+- takes only 2 values and they have to be exactly true or false. always has to be typed True with the T capitalized. or False. 
+- we can do if else statements in python too. will print out if true or false and will not if the opposite. 
+- booleans are the simplest possible variable. 
+- we indent using tab or spacing, do not switch up between the two though. (3 spaces). 
+- to test an if statement == (testing equality (==) that works with number or strings) 
+- using 'is' is also a way to do testing equality. 
+- using the testing equality != means not equal to 
+```
 
 ## Functions
 
@@ -47,6 +91,21 @@
     - `round(float)` - Takes one floating point number as an argument and rounds it to the nearest integer
     - `type(variable)` - Takes one variable as an argument and returns its type
 
+```
+# Notes 2/22/22
+- python is an object oriented language
+- different functions return different things
+- always use parenthesis in functions to differentiate them from objects
+- collections of variables in () is a touples (sp?) they cannot be changed after they are created. they can be returned as output of function. these are one type if complex data structure. 
+- collections of variables in [] are lists and they can be changed. 
+- len("DNA SEQUENCE") -> tells us how many nucleotides are in a sequence 
+- abs(-#) returns the absolute value of the number
+- round(#) rounds the number to a whole number, but the data type is still floating. 
+- int(#) removes the decimals and does not round. returns integer not floating. 
+- int(round(#)) nesting functions works from the inside out. 
+- type(your variable) that tell you what type of variable you have (string, float, integer) 
+```
+
 
 ## Methods
   
@@ -59,6 +118,22 @@
     - Methods can also be chained! - `myStr.strip().lower()`
     - `myStr.replace("y","ical")` - This method functions like find and replace, where the first argument is the text to find and the second argument is the text to use when replacing.
     - `myStr.split("O")` - Breaks up the string, using the character provided as an argument as the delimiter. This method then returns a list of new strings. We'll talk more about lists later.
+
+```
+# Notes 2/22/22
+- the functions we decsribed exist on their own, functions that belong to specific objects are called methods. we will only want to use that function with that particular object
+- we append methods to the end of the variable when we are executing them
+- the example above:  `myStr = "biOLogy  "` the letters are not homogenized we want to standardize them. 
+- variable.method 
+    - strip: removed end space 
+    - upper: uppercase
+    - lower: lowercase
+- we can chain methods together too, variable.method.method 
+    - replace: find and replace (for a nucleotide sequence for example), we can chain them together too. this does not change the variable itself
+    - store the output to a new variable using the code you ran to get the new sequence. will override the old variable though
+    - join the variables using + 
+    - split: breaks up the string
+```
 
 ## Comments in Python
 
@@ -82,6 +157,13 @@
     - `faveString = phyleaux`
     - `print("Favorite integer is %d, favorite float is %f, and favorite string is %s." % (faveInt,faveFloat,faveString))`
 - Note how the variables holding the values are provided in the same order inside parentheses after the `%`.
+
+```
+# Notes 2/2/22
+- python provides an easy to format strings when we have different variables we want to include in the string. 
+- operator % tells the type of variable we want. 
+- put in tuple (sp?) at the end if we want to combine them. 
+```
 
 ## User Input
 
@@ -110,3 +192,9 @@ variables in one string. Please do this in a Jupyter notebook.
 
 - [Python](https://www.python.org)
 - [Software Carpentry - Intro. to Python](http://swcarpentry.github.io/python-novice-inflammation/)
+
+```
+# Notes 2/22/22
+official python page, language refernce is useful. 
+make sure you are reading documentation for the version of python you have. 
+```
